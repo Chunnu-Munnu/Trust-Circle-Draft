@@ -5,36 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Securing and Empowering Communities</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
     <div class="container">
-        <h1>Sign Up</h1>
-        <form id="signup-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+        <div class="trust-circle">
+            <img src="trust circle1.jpg" alt="Trust Circle Logo">
+        </div>
+        <div class="form-container">
+            <h1>Sign Up</h1>
+            <form id="signup-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
 
-            <label for="email">Email ID:</label>
-            <input type="email" id="email" name="email" required>
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
 
-            <label for="confirm-password">Confirm Password:</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
 
-            <div class="role-selection">
-                <label for="role">Sign up as:</label>
-                <select id="role" name="role">
-                    <option value="resident">Resident</option>
-                    <option value="vendor">Vendor</option>
-                    <option value="Admin">Admin</option>
-                </select>
-            </div>
+                <div class="role-selection">
+                    <label for="role">Sign up as:</label>
+                    <select id="role" name="role">
+                        <option value="resident">Resident</option>
+                        <option value="vendor">Vendor</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
 
-            <button type="submit">Sign Up</button>
-        </form>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
     </div>
 
     <script src="script.js"></script>
 </body>
-</html>           
+</html>

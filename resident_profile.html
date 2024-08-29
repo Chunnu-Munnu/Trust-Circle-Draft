@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .details, .facilities, .entry-management {
+            margin: 20px 0;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Retrieve guest data from localStorage
+            const guestData = JSON.parse(localStorage.getItem('guestData'));
+
+            if (guestData) {
+                document.getElementById('guest-name').textContent = guestData.incomerName;
+                document.getElementById('guest-phone').textContent = guestData.phoneNumber;
+                document.getElementById('visit-purpose').textContent = guestData.purposeOfVisit;
+                document.getElementById('visit-time').textContent = guestData.timeOfVisit;
+                document.getElementById('visit-date').textContent = guestData.dateOfVisit;
+            } else {
+                document.getElementById('guest-profile').innerHTML = '<p>No guest data found.</p>';
+            }
+
+            // Retrieve vendor data from localStorage
+            const vendors = JSON.parse(localStorage.getItem('vendors')) || [];
+            const facilitiesElement = document.getElementById('vendor-facilities');
+
+            if (vendors.length > 0) {
+                let facilitiesList = '<h2>Available Vendors</h2>';
+                vendors.forEach(vendor => {
+                    facilitiesList += `
+                        <p><strong>Shop Address:</strong> ${vendor.shopAddress}</p>
+                        <p><strong>Category:</strong> ${vendor.category.replace(/-/g, ' ')}</p>
+                        <p><strong>Phone Number:</strong> ${vendor.phoneNumber}</p>
+                        <hr>
+                    `;
+                });
+                facilitiesElement.innerHTML = facilitiesList;
+            } else {
+                facilitiesElement.innerHTML = '<p>No vendor data available.</p>';
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Guest Profile</h1>
+        <div class="details">
+            <p><strong>Guest Name:</strong> <span id="guest-name"></span></p>
+            <p><strong>Phone Number:</strong> <span id="guest-phone"></span></p>
+            <p><strong>Purpose of Visit:</strong> <span id="visit-purpose"></span></p>
+            <p><strong>Time of Visit:</strong> <span id="visit-time"></span></p>
+            <p><strong>Date of Visit:</strong> <span id="visit-date"></span></p>
+        </div>
+        <div class="facilities" id="vendor-facilities">
+            <!-- Vendor facilities will be dynamically added here -->
+        </div>
+        <div class="entry-management">
+            <h2>Entry Management</h2>
+            <p><strong>Name of Guest:</strong> <span id="guest-name"></span></p>
+            <p><strong>Phone Number of Guest:</strong> <span id="guest-phone"></span></p>
+            <p><strong>Purpose of Visit:</strong> <span id="visit-purpose"></span></p>
+        </div>
+    </div>
+</body>
+</html>

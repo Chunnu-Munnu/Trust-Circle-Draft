@@ -4,7 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vendor Sign Up</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('vendor-form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Collect form data
+                const vendorData = {
+                    shopAddress: document.getElementById('shop-address').value,
+                    category: document.getElementById('category').value,
+                    phoneNumber: prompt('Please enter your phone number:')
+                };
+
+                // Store data in localStorage
+                let vendors = JSON.parse(localStorage.getItem('vendors')) || [];
+                vendors.push(vendorData);
+                localStorage.setItem('vendors', JSON.stringify(vendors));
+
+                // Redirect to the resident profile page (replace 'resident_profile.html' with your actual file name)
+                window.location.href = 'resident_profile.html';
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -23,7 +104,5 @@
             <button type="submit">Sign Up</button>
         </form>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

@@ -1,127 +1,93 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8; /* light gray background */
+  background-image: url(fa2bc0dba581c150d6b6be9bea14c8fb_fgraphic.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start; /* align items to the left */
+  align-items: center;
+  height: 100vh;
 }
 
-.container {
-    width: 80%;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.trust-circle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1; /* ensure the logo is on top */
+}
+
+.trust-circle img {
+  width: 60px; /* reduced logo size */
+  height: 60px;
+  border-radius: 50%; /* circular logo */
+}
+
+.form-container {
+  color: #333; /* dark text color for better readability */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center align form elements */
+  padding: 20px;
+  background-color: #ffffff; /* white background for form */
+  border-radius: 10px; /* rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* more prominent shadow */
+  width: 350px; /* reduced width for a more compact look */
+  max-width: 90%; /* responsive width */
+  margin: 40px; /* top and bottom margins */
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-form {
-    margin-top: 20px;
+  font-weight: 700; /* bolder text */
+  margin-bottom: 20px;
+  color: #333; /* dark text color for better readability */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* subtle text shadow */
 }
 
 label {
-    display: block;
-    margin-bottom: 10px;
+  width: 100%;
+  display: inline;
+  flex-direction: column; /* stack label and input vertically */
+  margin-bottom: 15px;
+  font-weight: 600; /* bolder text */
+  color: #555; /* dark gray text for contrast */
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1); /* subtle text shadow */
 }
 
-input[type="text"], input[type="email"], input[type="password"] {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.role-selection {
-    margin-bottom: 20px;
-}
-
+input[type="text"],
+input[type="email"],
+input[type="password"],
 select {
-    width: 100%;
-    height: 40px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  width: 100%; /* full width */
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd; /* light gray border */
+  border-radius: 5px; /* rounded edges */
+  box-sizing: border-box; /* include padding and border in element's total width and height */
+  font-weight: 400; /* normal text weight */
 }
 
 button[type="submit"] {
-    width: 100%;
-    height: 40px;
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  background-color: #007bff; /* primary color */
+  color: #fff; /* white text */
+  padding: 12px;
+  border: none;
+  border-radius: 5px; /* rounded edges */
+  cursor: pointer;
+  font-size: 16px; /* readable font size */
+  font-weight: 600; /* bolder text */
+  transition: background-color 0.3s ease; /* smooth transition */
+  width: 100%; /* full width */
 }
 
 button[type="submit"]:hover {
-    background-color: #3e8e41;
+  background-color: #0056b3; /* darker shade on hover */
 }
 
-/* additional styles for resident, vendor, and admin pages */
-.resident-form {
-    margin-top: 20px;
-}
-
-.resident-form label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.resident-form input[type="text"] {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.vendor-form {
-    margin-top: 20px;
-}
-
-.vendor-form label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.vendor-form input[type="text"] {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.vendor-form select {
-    width: 100%;
-    height: 40px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.admin-form {
-    margin-top: 20px;
-}
-
-.admin-form label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.admin-form input[type="text"] {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+@media (max-width: 600px) {
+  .form-container {
+    width: 90%; /* adjust form width for smaller screens */
+  }
 }

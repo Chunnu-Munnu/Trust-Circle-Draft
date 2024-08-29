@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+        .info {
+            margin-bottom: 20px;
+        }
+        .info label {
+            display: block;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        .info p {
+            margin: 5px 0;
+        }
+        .textbox {
+            background: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resident Profile</h1>
+        <div class="info">
+            <label for="flat-number">Flat Number:</label>
+            <p id="flat-number"></p>
+
+            <label for="tower-number">Tower Number:</label>
+            <p id="tower-number"></p>
+
+            <label for="society">Society:</label>
+            <p id="society"></p>
+
+            <label for="facilities">Facilities Available:</label>
+            <div id="facilities" class="textbox"></div>
+            
+            <label for="entry-management">Entry Management:</label>
+            <div id="entry-management" class="textbox">
+                <p>Name of Guest: <span id="guest-name"></span></p>
+                <p>Phone Number of Guest: <span id="guest-phone"></span></p>
+                <p>Purpose of Visit: <span id="visit-purpose"></span></p>
+            </div>
+        </div>
+        <button onclick="window.history.back()">Back</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get query parameters
+            const params = new URLSearchParams(window.location.search);
+            const flatNumber = params.get('flatNumber');
+            const towerNumber = params.get('towerNumber');
+            const society = params.get('society');
+            const facilities = params.get('facilities');
+
+            // Populate profile information
+            document.getElementById('flat-number').textContent = flatNumber;
+            document.getElementById('tower-number').textContent = towerNumber;
+            document.getElementById('society').textContent = society;
+            document.getElementById('facilities').textContent = facilities;
+            
+            // Mock data for entry management (can be replaced with real data)
+            document.getElementById('guest-name').textContent = 'Ashish';
+            document.getElementById('guest-phone').textContent = '849239422';
+            document.getElementById('visit-purpose').textContent = 'Maintenance Check';
+        });
+    </script>
+</body>
+</html>

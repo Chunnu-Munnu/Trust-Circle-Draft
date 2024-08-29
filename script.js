@@ -15,12 +15,22 @@ form.addEventListener('submit', (e) => {
         return;
     }
 
-    // Redirect to new page based on role selection
+    const userData = {
+        username,
+        email,
+        password,
+        role
+    };
+
+    // Store data in local storage
     if (role === 'resident') {
+        saveDataToLocalStorage('residents', userData);
         window.location.href = 'resident_signup.html';
     } else if (role === 'vendor') {
+        saveDataToLocalStorage('vendors', userData);
         window.location.href = 'vendor_signup.html';
     } else if (role === 'admin') {
+        saveDataToLocalStorage('admins', userData);
         window.location.href = 'admin_signup.html';
     }
 });
@@ -42,7 +52,14 @@ residentForm.addEventListener('submit', (e) => {
         return;
     }
 
-    // Redirect to a confirmation page or perform further actions
+    const residentData = {
+        flatNumber,
+        towerNumber,
+        society
+    };
+
+    // Store resident data in local storage
+    saveDataToLocalStorage('residents', residentData);
     window.location.href = 'resident_confirmation.html';
 });
 
@@ -58,7 +75,13 @@ vendorForm.addEventListener('submit', (e) => {
         return;
     }
 
-    // Redirect to a confirmation page or perform further actions
+    const vendorData = {
+        shopAddress,
+        category
+    };
+
+    // Store vendor data in local storage
+    saveDataToLocalStorage('vendors', vendorData);
     window.location.href = 'vendor_confirmation.html';
 });
 
@@ -75,6 +98,20 @@ adminForm.addEventListener('submit', (e) => {
         return;
     }
 
-    // Redirect to a confirmation page or perform further actions
+    const adminData = {
+        incomerName,
+        phoneNumber,
+        purposeOfVisit
+    };
+
+    // Store admin data in local storage
+    saveDataToLocalStorage('admins', adminData);
     window.location.href = 'admin_confirmation.html';
 });
+
+// Function to save data to local storage
+function saveDataToLocalStorage(key, data) {
+    let storedData = JSON.parse(localStorage.getItem(key)) || [];
+    storedData.push(data);
+    localStorage.setItem(key, JSON.stringify(storedData));
+}
