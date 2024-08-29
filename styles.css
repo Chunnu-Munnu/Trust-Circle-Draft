@@ -62,3 +62,66 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #3e8e41;
 }
+
+/* additional styles for resident, vendor, and admin pages */
+.resident-form {
+    margin-top: 20px;
+}
+
+.resident-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.resident-form input[type="text"] {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.vendor-form {
+    margin-top: 20px;
+}
+
+.vendor-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.vendor-form input[type="text"] {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.vendor-form select {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.admin-form {
+    margin-top: 20px;
+}
+
+.admin-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.admin-form input[type="text"] {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

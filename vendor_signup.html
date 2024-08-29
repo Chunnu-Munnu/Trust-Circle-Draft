@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Vendor Sign Up</h1>
+        <form id="vendor-form">
+            <label for="shop-address">Shop Address:</label>
+            <input type="text" id="shop-address" name="shop-address" required>
+
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="fruits-and-vegetables">Fruits and Vegetables</option>
+                <option value="stationary-and-electronics">Stationary and Electronics</option>
+                <option value="salon-and-grooming">Salon and Grooming</option>
+            </select>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
