@@ -3,45 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Securing and Empowering Communities</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="form-container">
-            <h1>Hello!</h1>
-            <p>Please signup to continue</p>
-            <form action="#">
-                <div class="form-group">
-                    <label for="fullname">Full Name</label>
-                    <input type="text" id="fullname" placeholder="John Doe" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="johndoe@gmail.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Password" required>
-                </div>
-                <div class="form-group">
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" placeholder="Confirm Password" required>
-                </div>
-                <button type="submit" class="btn">Sign Up</button>
-                <div class="social-media">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-               
-            </form>
-        </div>
-        <div class="image-container">
-            <div class="soccer-ball"></div>
-            <h2>Trust Circle</h2>
-            <p>Already have an account?</p>
-            <a href="#" class="btn">Sign In</a>
-        </div>
+        <h1>Sign Up</h1>
+        <form id="signup-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+
+            <div class="role-selection">
+                <label for="role">Sign up as:</label>
+                <select id="role" name="role">
+                    <option value="resident">Resident</option>
+                    <option value="vendor">Vendor</option>
+                    <option value="guest">Guest</option>
+                </select>
+            </div>
+
+            <button type="submit">Sign Up</button>
+        </form>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
